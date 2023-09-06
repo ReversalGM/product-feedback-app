@@ -21,8 +21,18 @@
 
   box-sizing: border-box;
   font-family: var(--primary-font);
+
+  padding: 0;
+  margin: 0;
 }
 
-body {
-  margin: 0;
+.btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
 }

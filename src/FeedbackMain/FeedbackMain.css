@@ -1,0 +1,5 @@
+.feedback__list {
+  border: 1px solid coral;
+  padding: 1rem;
+  background-color: var(--secondary-pale-moon);
+}
