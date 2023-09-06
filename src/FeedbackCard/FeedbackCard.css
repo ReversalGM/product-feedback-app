@@ -1,0 +1,54 @@
+.feedback-card {
+  background-color: var(--primary-white);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: start;
+  grid-template-rows: 1fr 2fr 2fr 2fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "title title"
+    "description description"
+    "category category"
+    "upvote comments";
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  row-gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.feedback-card__title {
+  grid-area: title;
+  color: var(--secondary-dark-blue);
+  margin: 0;
+}
+
+.feedback-card__description {
+  grid-area: description;
+  color: var(--secondary-grayish-blue);
+}
+
+.feedback-card__category {
+  grid-area: category;
+  background-color: var(--secondary-pale-moon);
+  color: var(--primary-blue);
+  font-weight: 600;
+  padding: 0.5em 1em;
+  border-radius: 0.75em;
+}
+
+.btn__text {
+  font-weight: 700;
+}
+
+.btn--upvote {
+  grid-area: upvote;
+  background-color: var(--secondary-pale-moon);
+  padding: 0.5em 1em;
+  border-radius: 0.75em;
+}
+
+.btn--comments {
+  grid-area: comments;
+  justify-self: end;
+}
