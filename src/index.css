@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+  /* Primary Colors */
+  --primary-purple: #ad1fea;
+  --primary-blue: #4661e6;
+  --primary-dark-blue: #4661e6;
+  --primary-red: #d73737;
+  --primary-white: #ffffff;
+
+  /* Secondary Colors */
+  --secondary-pale-moon: #f2f4ff;
+  --secondary-white: #f7f8fd;
+  --secondary-dark-blue: #3a4374;
+  --secondary-grayish-blue: #647196;
+  --secondary-orange: #f49f85;
+  --secondary-light-blue: #62bcfa;
+
+  /* Fonts */
+  --primary-font: "Jost";
+
+  box-sizing: border-box;
+  font-family: var(--primary-font);
+}
+
+body {
+  margin: 0;
+}
