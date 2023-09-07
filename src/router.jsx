@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom"
 
-import { FeedbackMain } from "./FeedbackMain/FeedbackMain.jsx"
-import { FeedbackDetail } from "./FeedbackDetail/FeedbackDetail.jsx"
-import { EditFeedback } from "./EditFeedback/EditSuggestion.jsx"
-import { NewFeedback } from "./NewFeedback/NewFeedback.jsx"
-import { Roadmap } from "./Roadmap/Roadmap.jsx"
+import { FeedbackMain } from "./components-pages/FeedbackMain/FeedbackMain.jsx"
+import { FeedbackDetail } from "./components-pages/FeedbackDetail/FeedbackDetail.jsx"
+import { EditFeedback } from "./components-pages/EditFeedback/EditSuggestion.jsx"
+import { NewFeedback } from "./components-pages/NewFeedback/NewFeedback.jsx"
+import { Roadmap } from "./components-pages/Roadmap/Roadmap.jsx"
 
 export const router = createBrowserRouter([
   { path: "/", element: <FeedbackMain /> },
