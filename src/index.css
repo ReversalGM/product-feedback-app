@@ -9,12 +9,16 @@
   --primary-white: #ffffff;
 
   /* Secondary Colors */
+  --secondary-grayish-white: #cfd3e2;
   --secondary-pale-moon: #f2f4ff;
+  --secondary-dark-moon: #cfd7ff;
   --secondary-white: #f7f8fd;
   --secondary-dark-blue: #3a4374;
   --secondary-grayish-blue: #647196;
-  --secondary-orange: #f49f85;
-  --secondary-light-blue: #62bcfa;
+
+  /* Background Colors */
+  --background-orange: #f49f85;
+  --background-light-blue: #62bcfa;
 
   /* Fonts */
   --primary-font: "Jost";
