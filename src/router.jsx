@@ -8,7 +8,7 @@ import { Roadmap } from "./Roadmap/Roadmap.jsx"
 
 export const router = createBrowserRouter([
   { path: "/", element: <FeedbackMain /> },
-  { path: "/id", element: <FeedbackDetail /> },
+  { path: "/:feedbackId", element: <FeedbackDetail /> },
   { path: "/new", element: <NewFeedback /> },
   { path: "/edit", element: <EditFeedback /> },
   { path: "/roadmap", element: <Roadmap /> },
