@@ -1,9 +1,5 @@
 .feedback-card {
-  background-color: var(--primary-white);
   display: grid;
-  justify-content: center;
-  align-items: center;
-  justify-items: start;
   grid-template-rows: 1fr 2fr 2fr 2fr;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
@@ -11,10 +7,16 @@
     "description description"
     "category category"
     "upvote comments";
+  row-gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  justify-items: start;
+
   padding: 1.5rem;
   border-radius: 0.75rem;
-  row-gap: 0.5rem;
   font-size: 0.875rem;
+
+  background-color: var(--primary-white);
 }
 
 .feedback-card__title {
@@ -37,15 +39,12 @@
   border-radius: 0.75em;
 }
 
-.btn__text {
-  font-weight: 700;
-}
-
 .btn--upvote {
   grid-area: upvote;
   background-color: var(--secondary-pale-moon);
   padding: 0.5em 1em;
   border-radius: 0.75em;
+  font-weight: 700;
 }
 
 .btn--upvote:not(.btn--upvoted):hover {
@@ -57,11 +56,16 @@
   color: var(--primary-white);
 }
 
-.btn__icon--upvoted {
+.btn--upvoted > .btn__icon {
+  /* filter to change svg color to  --secondary-pale-moon: #f2f4ff; */
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%)
     hue-rotate(278deg) brightness(110%) contrast(101%);
 }
+
 .btn--comments {
   grid-area: comments;
   justify-self: end;
+  background-color: var(--primary-white);
+  padding: 0.5em 1em;
+  font-weight: 700;
 }

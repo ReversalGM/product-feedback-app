@@ -1,4 +1,5 @@
 import "./FeedbackCard.css"
+import { Button } from "/src/components/Button/Button.jsx"
 import { useState } from "react"
 export function FeedbackCard({
   id,
@@ -10,32 +11,34 @@ export function FeedbackCard({
   comments,
 }) {
   const [upvoted, setUpvoted] = useState(false)
+
+  function handleUpvote(event) {
+    setUpvoted((prev) => !prev)
+  }
   return (
     <>
       <div className="feedback-card">
         <h4 className="feedback-card__title">{title}</h4>
         <p className="feedback-card__description">{description}</p>
         <div className="feedback-card__category">{category}</div>
-        <button className={`btn btn--upvote ${upvoted ? "btn--upvoted" : ""}`}>
-          <img
-            src="/src/assets/shared/icon-arrow-up.svg"
-            alt="upvote icon"
-            className={`${upvoted ? "btn__icon--upvoted" : ""}`}
-          />
-          <span
-            className="btn__text"
-            onClick={(event) => {
-              setUpvoted((prev) => !prev)
-              console.log(upvoted)
-            }}
-          >
-            {upvotes + upvoted}
-          </span>
-        </button>
-        <button className="btn btn--comments">
+        <Button
+          btnClasses={`btn--upvote ${upvoted ? "btn--upvoted" : ""}`}
+          btnIcon="/src/assets/shared/icon-arrow-up.svg"
+          btnIconAlt="upvote icon"
+          btnText={upvotes + upvoted}
+          clickHandler={handleUpvote}
+        ></Button>
+        <Button
+          btnClasses="btn--comments"
+          btnIcon="/src/assets/shared/icon-comments.svg"
+          btnIconAlt="comment icon"
+          btnText={comments?.length}
+        ></Button>
+
+        {/* <button className="btn btn--comments">
           <img src="/src/assets/shared/icon-comments.svg" alt="comment icon" />
           <span className="btn__text">{comments?.length}</span>
-        </button>
+        </button> */}
       </div>
     </>
   )

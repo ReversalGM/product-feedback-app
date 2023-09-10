@@ -51,21 +51,22 @@
   color: var(--secondary-grayish-white);
 }
 
-.btn--filter {
+.feedback__filter-btn {
+  background-color: transparent;
   color: var(--secondary-pale-moon);
   font-weight: 700;
   padding: 0.35rem;
   transform: translateY(2.5%);
 }
 
-.btn__icon--filter {
+.feedback__filter-btn > .btn__icon--right {
   /* filter to change svg color to  --secondary-pale-moon: #f2f4ff; */
   filter: brightness(0) saturate(100%) invert(100%) sepia(67%) saturate(1913%)
     hue-rotate(179deg) brightness(105%) contrast(105%);
   transform: translateY(25%);
 }
 
-.btn--purple {
+.btn--feedback {
   color: var(--secondary-pale-moon);
   font-weight: 700;
   background-color: var(--primary-purple);

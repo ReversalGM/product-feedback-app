@@ -1,8 +1,21 @@
+import { useState } from "react"
 import "./FeedbackMain.css"
 import data from "/src/assets/data.json"
 import { FeedbackCard } from "../FeedbackCard/FeedbackCard"
-
+import { Button } from "/src/components/Button/Button.jsx"
+import { Dropdown } from "/src/components/Dropdown/Dropdown"
 export function FeedbackMain(props) {
+  const filterList = [
+    "Most Upvotes",
+    "Least Upvotes",
+    "Most Comments",
+    "Least Comments",
+  ]
+  const [filter, setFilter] = useState(filterList[0])
+
+  function handleFilterClick(newValue) {
+    setFilter(newValue)
+  }
   return (
     <>
       <header className="feedback__header">
@@ -15,15 +28,18 @@ export function FeedbackMain(props) {
       <div className="feedback__filter">
         <span className="feedback__filter-text">
           Sort by :
-          <button className="btn btn--filter">
-            <span>Most Upvotes</span>
-            <img
-              className="btn__icon--filter"
-              src="/src/assets/shared/icon-arrow-down.svg"
-            ></img>
-          </button>
+          <Dropdown
+            btnProps={{
+              btnClasses: "feedback__filter-btn",
+              btnIconRight: "/src/assets/shared/icon-arrow-down.svg",
+              btnIconAltRight: "down-arrow icon",
+            }}
+            value={filter}
+            setValue={handleFilterClick}
+            valueList={filterList}
+          ></Dropdown>
         </span>
-        <button className="btn btn--purple">+ Add Feedback</button>
+        <Button btnClasses="btn--feedback" btnText="+ Add Feedback"></Button>
       </div>
       <div className="feedback__list">
         {data.productRequests
