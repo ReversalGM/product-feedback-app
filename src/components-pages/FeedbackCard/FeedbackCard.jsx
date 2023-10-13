@@ -22,18 +22,20 @@ export function FeedbackCard({
         <p className="feedback-card__description">{description}</p>
         <div className="feedback-card__category">{category}</div>
         <Button
-          btnClasses={`btn--upvote ${upvoted ? "btn--upvoted" : ""}`}
+          className={`btn--upvote ${upvoted ? "btn--upvoted" : ""}`}
           btnIcon="/src/assets/shared/icon-arrow-up.svg"
           btnIconAlt="upvote icon"
-          btnText={upvotes + upvoted}
           clickHandler={handleUpvote}
-        ></Button>
+        >
+          {upvotes + upvoted}
+        </Button>
         <Button
-          btnClasses="btn--comments"
+          className="btn--comments"
           btnIcon="/src/assets/shared/icon-comments.svg"
           btnIconAlt="comment icon"
-          btnText={comments?.length}
-        ></Button>
+        >
+          {comments?.length}
+        </Button>
 
         {/* <button className="btn btn--comments">
           <img src="/src/assets/shared/icon-comments.svg" alt="comment icon" />

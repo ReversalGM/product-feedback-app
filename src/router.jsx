@@ -10,6 +10,6 @@ export const router = createBrowserRouter([
   { path: "/", element: <FeedbackMain /> },
   { path: "/:feedbackId", element: <FeedbackDetail /> },
   { path: "/new", element: <NewFeedback /> },
-  { path: "/edit", element: <EditFeedback /> },
+  { path: "/edit/:feedbackId", element: <EditFeedback /> },
   { path: "/roadmap", element: <Roadmap /> },
 ])

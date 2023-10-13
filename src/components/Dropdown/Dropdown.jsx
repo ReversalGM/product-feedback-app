@@ -17,9 +17,10 @@ export function Dropdown(props) {
       <Button
         clickHandler={() => setActive((curVal) => !curVal)}
         {...props.btnProps}
-        btnText={props.value}
         className="Dropdown__button"
-      ></Button>
+      >
+        {props.value}
+      </Button>
       {active && (
         <ul className="Dropdown__menu">
           {props.valueList.map((element) => {

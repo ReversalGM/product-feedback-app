@@ -1,0 +1,40 @@
+.comment-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-gap: 1rem;
+}
+
+.comment-form__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--secondary-dark-blue);
+  grid-column: 1 / -1;
+}
+
+.comment-form__text-area {
+  grid-column: 1 / -1;
+
+  resize: none;
+  background-color: var(--secondary-white);
+  border: none;
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
+.comment-form__text-area::placeholder {
+  color: #8c92b3;
+}
+
+.comment-form__char-remain {
+  align-self: center;
+  font-size: 0.9em;
+  color: var(--secondary-grayish-blue);
+}
+
+.comment-form__submit-btn {
+  color: var(--secondary-pale-moon);
+  background-color: var(--primary-purple);
+  font-weight: 700;
+}

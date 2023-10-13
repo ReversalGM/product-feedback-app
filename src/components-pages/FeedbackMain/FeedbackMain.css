@@ -1,4 +1,5 @@
 .feedback__header {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 3fr 1fr;
@@ -34,6 +35,31 @@
 .feedback__header-button {
   grid-area: button;
   justify-self: end;
+  background: transparent;
+}
+
+.feedback__menu {
+  transform: translateX(100%);
+  position: absolute;
+  background-color: var(--secondary-white);
+  z-index: 1;
+  top: 100%;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+
+  padding: 5%;
+}
+
+.feedback__menu.opened {
+  transform: none;
+}
+
+.menu-group {
+  background-color: var(--primary-white);
+  border-radius: 0.75em;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
 }
 
 .feedback__filter {
