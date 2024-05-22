@@ -1,37 +1,75 @@
 .feedback-card {
   display: grid;
-  grid-template-rows: 1fr 2fr 2fr 2fr;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:
-    "title title"
-    "description description"
-    "category category"
-    "upvote comments";
-  row-gap: 0.5rem;
+  grid-auto-rows: max-content;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
   justify-content: center;
   align-items: center;
   justify-items: start;
-
   padding: 1.5rem;
-  border-radius: 0.75rem;
+  border: none;
   font-size: 0.875rem;
-
   background-color: var(--primary-white);
+    border-radius: 0.4em;
+  }
+  
+  .feedback-card.feedback-card--orange {
+    border-top: 0.4em solid var(--background-orange);
+  }
+  
+  .feedback-card.feedback-card--purple {
+    border-top: 0.4em solid var(--primary-purple);
+  }
+  
+  .feedback-card.feedback-card--blue {
+    border-top: 0.4em solid var(--background-light-blue);
+  }
+  
+  .feedback-card__status {
+    grid-column: 1 / -1;
+    display: flex;
+    color: var(--secondary-grayish-blue);
+  }
+  
+  .feedback-card__status>h4 {
+    font-weight: 400;
+    margin-left: 0.5em;
+  }
+  
+  .feedback-card__bullet {
+    border: none;
+    justify-self: start;
+    align-self: center;
+    width: 0.6rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 99999rem;
+  }
+  
+  .feedback-card__bullet.feedback-card--orange {
+    background-color: var(--background-orange);
+  }
+  
+  .feedback-card__bullet.feedback-card--purple {
+    background-color: var(--primary-purple);
+  }
+
+.feedback-card__bullet.feedback-card--blue {
+  background-color: var(--background-light-blue);
 }
 
 .feedback-card__title {
-  grid-area: title;
+  grid-column: 1 / -1;
   color: var(--secondary-dark-blue);
   margin: 0;
 }
 
 .feedback-card__description {
-  grid-area: description;
+  grid-column: 1 / -1;
   color: var(--secondary-grayish-blue);
 }
 
 .feedback-card__category {
-  grid-area: category;
+  grid-column: 1 / -1;
   background-color: var(--secondary-pale-moon);
   color: var(--primary-blue);
   font-weight: 600;
@@ -40,7 +78,7 @@
 }
 
 .btn--upvote {
-  grid-area: upvote;
+  grid-column: span 1;
   background-color: var(--secondary-pale-moon);
   padding: 0.5em 1em;
   border-radius: 0.75em;
@@ -56,14 +94,14 @@
   color: var(--primary-white);
 }
 
-.btn--upvoted > .btn__icon {
+.btn--upvoted>.btnIconLeft {
   /* filter to change svg color to  --secondary-pale-moon: #f2f4ff; */
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%)
     hue-rotate(278deg) brightness(110%) contrast(101%);
 }
 
 .btn--comments {
-  grid-area: comments;
+  grid-column: span 1;
   justify-self: end;
   background-color: var(--primary-white);
   padding: 0.5em 1em;

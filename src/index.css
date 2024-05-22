@@ -1,10 +1,20 @@
 *,
 *::before,
 *::after {
+  box-sizing: border-box;
+  font-family: var(--primary-font);
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+html {
   /* Primary Colors */
   --primary-purple: #ad1fea;
   --primary-blue: #4661e6;
-  --primary-dark-blue: #4661e6;
+  --primary-dark-blue: #373f68;
   --primary-red: #d73737;
   --primary-white: #ffffff;
 
@@ -22,12 +32,4 @@
 
   /* Fonts */
   --primary-font: "Jost";
-
-  box-sizing: border-box;
-  font-family: var(--primary-font);
-
-  padding: 0;
-  margin: 0;
-
-  list-style: none;
 }

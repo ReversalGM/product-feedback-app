@@ -13,7 +13,7 @@ export function Dropdown(props) {
   })
 
   return (
-    <div ref={dropdownRef} className="Dropdown">
+    <div ref={dropdownRef} className={"Dropdown " + props?.className}>
       <Button
         clickHandler={() => setActive((curVal) => !curVal)}
         {...props.btnProps}
