@@ -6,48 +6,66 @@
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "go-back add-feedback" "title add-feedback";
   justify-items: start;
-
-  border: 1px solid red;
-  padding: 1.625rem;
+  padding: 1.625rem 1.5rem;
 }
 
 .Roadmap__header__btn--go-back {
   grid-area: go-back;
   color: var(--primary-white);
   border-radius: 0.6em;
-  text-decoration: none;
+  font-size: 0.8125rem;
   font-weight: 700;
   background-color: transparent;
   gap: 0.75em;
-  margin-left: -1em;
+  padding: 0;
 }
-
 
 .Roadmap__header__btn--go-back>.btn__icon {
   /* filter sets left arrow color to #CDD2EE */
   filter: brightness(0) saturate(100%) invert(87%) sepia(6%) saturate(906%) hue-rotate(195deg) brightness(96%) contrast(94%);
 }
 
-
-
 .Roadmap__header__btn--add-feedback {
+  grid-area: add-feedback;
   color: var(--primary-white);
   border-radius: 0.6em;
-  text-decoration: none;
   font-style: normal;
   font-weight: 700;
+  font-size: 0.8125rem;
   background-color: var(--primary-purple);
   justify-self: end;
+  align-self: center;
 }
 
 .Roadmap__title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
+.Roadmap__main {
+  background-color: var(--background-white);
+}
+
+.Roadmap__container {
+  padding: 1.5rem 1.5rem;
+}
 .Roadmap__column {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem 1.5rem;
-  background-color: var(--secondary-white);
+}
+
+.Roadmap__column__title__container {
+  margin-bottom: 1rem;
+}
+
+.Roadmap__column__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--secondary-dark-blue);
+}
+
+.Roadmap__column__subtitle {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--secondary-grayish-blue);
 }

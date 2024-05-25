@@ -2,8 +2,10 @@ import "./Roadmap.css"
 import { Button } from "../../components/Button/Button"
 import { FeedbackCard } from "../FeedbackCard/FeedbackCard"
 import data from "/src/assets/data.json"
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import { Link } from "react-router-dom"
+import { RoadmapTabs } from "./RoadmapTabs/RoadmapTabs"
+
 export function Roadmap() {
   const plannedList = useMemo(() => {
     return data.productRequests.filter((elem) => {
@@ -21,6 +23,33 @@ export function Roadmap() {
       return elem.status === "live"
     })
   }, [data])
+
+  const tabData = [
+    {
+      name: "Planned",
+      data: plannedList,
+      description: "Ideas prioritized for research",
+      cardClass: "feedback-card--orange",
+      tabClass: "Tab--orange",
+    },
+    {
+      name: "In-Progress",
+      data: inprogressList,
+      description: "Currently being developed",
+      cardClass: "feedback-card--purple",
+      tabClass: "Tab--purple",
+    },
+    {
+      name: "Live",
+      data: liveList,
+      description: "Released features",
+      cardClass: "feedback-card--blue",
+      tabClass: "Tab--blue",
+    },
+  ]
+
+  const [selectedTab, setSelectedTab] = useState(tabData[0])
+
   return (
     <>
       <header className="Roadmap__header">
@@ -42,40 +71,25 @@ export function Roadmap() {
         </Button>
         <h1 className="Roadmap__title">Roadmap</h1>
       </header>
-      <main className="Roadmap__container">
-        <fieldset className="Roadmap__column-selector">
-          <input type="radio" id="planned" name="roadmap-select" />
-          <label htmlFor="planned">Planned</label>
-          <input type="radio" id="in-progress" name="roadmap-select" />
-          <label htmlFor="in-progress">In-Progress</label>
-          <input type="radio" id="live" name="roadmap-select" />
-          <label htmlFor="live">Live</label>
-        </fieldset>
+      <main className="Roadmap__main">
+        <RoadmapTabs {...{ tabData, selectedTab, setSelectedTab }} />
         <div className="Roadmap__container">
-          <div className="Roadmap__column Roadmap__column--planned">
-            <h2 className="Roadmap__column__title">Planned</h2>
+          <div className="Roadmap__column__title__container">
+            <h2 className="Roadmap__column__title">{`${selectedTab.name}  (${selectedTab.data.length})`}</h2>
             <h3 className="Roadmap__column__subtitle">
-              Ideas prioritized for research
+              {selectedTab.description}
             </h3>
-            {plannedList.map((elem) => {
+          </div>
+          <div className="Roadmap__column">
+            {selectedTab.data.map((elem) => {
               return (
                 <FeedbackCard
-                  className={"feedback-card--orange"}
+                  className={selectedTab.cardClass}
                   key={elem.id}
                   {...elem}
                 />
               )
             })}
-          </div>
-          <div className="Roadmap__column Roadmap__column--in-progress">
-            <h2 className="Roadmap__column__title">In-Progress</h2>
-            <h3 className="Roadmap__column__subtitle">
-              Currently being developed
-            </h3>
-          </div>
-          <div className="Roadmap__column Roadmap__column--live">
-            <h2 className="Roadmap__column__title">Live</h2>
-            <h3 className="Roadmap__column__subtitle">Released features</h3>
           </div>
         </div>
       </main>

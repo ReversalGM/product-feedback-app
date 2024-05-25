@@ -25,10 +25,12 @@ html {
   --secondary-white: #f7f8fd;
   --secondary-dark-blue: #3a4374;
   --secondary-grayish-blue: #647196;
+  --secondary-gray: #8C92B3;
 
   /* Background Colors */
   --background-orange: #f49f85;
   --background-light-blue: #62bcfa;
+  --background-white: #f2f2f2;
 
   /* Fonts */
   --primary-font: "Jost";
