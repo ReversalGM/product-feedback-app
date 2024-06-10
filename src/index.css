@@ -10,6 +10,17 @@
   list-style: none;
 }
 
+#root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-white);
+  overflow: hidden;
+  border: 1px solid red;
+}
+
 html {
   /* Primary Colors */
   --primary-purple: #ad1fea;
@@ -25,7 +36,7 @@ html {
   --secondary-white: #f7f8fd;
   --secondary-dark-blue: #3a4374;
   --secondary-grayish-blue: #647196;
-  --secondary-gray: #8C92B3;
+  --secondary-gray: #8c92b3;
 
   /* Background Colors */
   --background-orange: #f49f85;

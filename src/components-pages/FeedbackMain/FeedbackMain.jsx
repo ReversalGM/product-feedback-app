@@ -35,7 +35,8 @@ export function FeedbackMain(props) {
         >
           <img src="/src/assets/shared/mobile/icon-hamburger.svg"></img>
         </button>
-        <div className={"feedback__menu" + (menuOpen ? " opened" : "")}>
+
+        {/* <div className={"feedback__menu" + (menuOpen ? " opened" : "")}>
           <div className="menu-group">
             <CategoryMenu
               categoryList={categoryList}
@@ -48,8 +49,9 @@ export function FeedbackMain(props) {
           <div className="menu-group">
             <RoadmapMenu />
           </div>
-        </div>
+        </div> */}
       </header>
+
       {/* desktop header
       <header>
 
