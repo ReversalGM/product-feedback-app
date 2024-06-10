@@ -17,7 +17,7 @@ export function Dropdown(props) {
       <Button
         clickHandler={() => setActive((curVal) => !curVal)}
         {...props.btnProps}
-        className="Dropdown__button"
+        className={`Dropdown__button ${props.btnProps?.className}`}
       >
         {props.value}
       </Button>
