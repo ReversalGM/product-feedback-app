@@ -6,6 +6,8 @@ import { FeedbackCard } from "../FeedbackCard/FeedbackCard"
 import { Button } from "/src/components/Button/Button.jsx"
 import { Dropdown } from "/src/components/Dropdown/Dropdown"
 import { RoadmapMenu } from "./RoadmapMenu/RoadmapMenu"
+import { useViewport } from "../../hooks/useViewport"
+
 export function FeedbackMain(props) {
   const filterList = [
     "Most Upvotes",
@@ -17,25 +19,26 @@ export function FeedbackMain(props) {
   const [filter, setFilter] = useState(filterList[0])
   const [category, setCategory] = useState(categoryList[0])
   const [menuOpen, setMenuOpen] = useState(false)
+  const { width, height } = useViewport()
 
   function handleFilterClick(newValue) {
     setFilter(newValue)
   }
   return (
-    <>
-      {/* mobile header */}
-      <header className="feedback__header">
-        <h1 className="feedback__header-title">Frontend mentor</h1>
-        <h2 className="feedback__header-subtitle">Feedback Board</h2>
-        <button
-          onClick={(event) => {
-            setMenuOpen((curState) => !curState)
-          }}
-          className="feedback__header-button btn"
-        >
-          <img src="/src/assets/shared/mobile/icon-hamburger.svg"></img>
-        </button>
-
+    <div className="feedback__page-container">
+      <header className="feedback__header-container">
+        <div className="feedback__header">
+          <h1 className="feedback__header-title">Frontend mentor</h1>
+          <h2 className="feedback__header-subtitle">Feedback Board</h2>
+          <button
+            onClick={(event) => {
+              setMenuOpen((curState) => !curState)
+            }}
+            className="feedback__header-button btn"
+          >
+            <img src="/src/assets/shared/mobile/icon-hamburger.svg"></img>
+          </button>
+        </div>
         <div
           className={`feedback__menu-backdrop ${menuOpen && "opened"}`}
           onClick={() => {
@@ -57,6 +60,7 @@ export function FeedbackMain(props) {
           </div>
         </div>
       </header>
+
       <div className="feedback__filter">
         <span className="feedback__filter-text">
           Sort by :
@@ -102,6 +106,6 @@ export function FeedbackMain(props) {
           </div>
         )}
       </div>
-    </>
+    </div>
   )
 }
