@@ -74,11 +74,33 @@ export function FeedbackMain(props) {
         <Button className="btn--feedback">+ Add Feedback</Button>
       </div>
       <div className="feedback__list">
-        {data.productRequests
-          .filter((feedback) => feedback.status === "suggestion")
-          .map((feedback) => {
-            return <FeedbackCard {...feedback} />
-          })}
+        {data?.productRequests?.length > 0 ? (
+          // list of suggestions
+          data.productRequests
+            .filter((feedback) => feedback.status === "suggestion")
+            .map((feedback) => {
+              return <FeedbackCard {...feedback} />
+            })
+        ) : (
+          // empty state
+          <div className="feedback__empty">
+            <img
+              className="feedback__empty__image"
+              src="/src/assets/suggestions/illustration-empty.svg"
+              alt="no feedback image"
+            ></img>
+            <div className="feedback__empty__text-container">
+              <h2 className="feedback__empty__title">
+                There is no feeedback yet.
+              </h2>
+              <p className="feedback__empty__text">
+                Got a suggestion? Found a bug that needs to be squashed? We love
+                hearing about new ideas to improve our app.
+              </p>
+            </div>
+            <Button className="btn--feedback">+ Add Feedback</Button>
+          </div>
+        )}
       </div>
     </>
   )
