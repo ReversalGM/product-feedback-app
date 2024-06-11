@@ -17,6 +17,8 @@
   background-size: cover;
   color: var(--primary-white);
   padding: 1rem 1.5rem;
+  /* make header and header menu appear above filters and feedback list */
+  z-index: 1;
 }
 
 .feedback__header-title {
@@ -38,18 +40,41 @@
   background: transparent;
 }
 
+.feedback__menu-backdrop {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100vw;
+  background: black;
+
+  overflow: hidden; /* Hide the element content, while height = 0 */
+  height: 0;
+  opacity: 0;
+  transition: height 0ms 300ms ease-out, opacity 300ms 0ms ease-out;
+}
+
+.feedback__menu-backdrop.opened {
+  height: 100vh;
+  opacity: 0.5;
+  transition: height 0ms 0ms ease-in, opacity 300ms 0ms ease-in;
+}
+
 .feedback__menu {
-  /* transform: translateX(100%); */
   position: absolute;
   background-color: var(--secondary-white);
   z-index: 1;
   top: 100%;
-
+  right: 0;
+  width: 70vw;
+  height: 100vh;
   padding: 5%;
+  transform: translateX(100%);
+  transition: transform 300ms ease-out;
 }
 
 .feedback__menu.opened {
   transform: none;
+  transition: transform 300ms ease-in;
 }
 
 .menu-group {

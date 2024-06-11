@@ -36,7 +36,13 @@ export function FeedbackMain(props) {
           <img src="/src/assets/shared/mobile/icon-hamburger.svg"></img>
         </button>
 
-        {/* <div className={"feedback__menu" + (menuOpen ? " opened" : "")}>
+        <div
+          className={`feedback__menu-backdrop ${menuOpen && "opened"}`}
+          onClick={() => {
+            setMenuOpen(false)
+          }}
+        ></div>
+        <div className={`feedback__menu ${menuOpen && "opened"}`}>
           <div className="menu-group">
             <CategoryMenu
               categoryList={categoryList}
@@ -49,13 +55,8 @@ export function FeedbackMain(props) {
           <div className="menu-group">
             <RoadmapMenu />
           </div>
-        </div> */}
+        </div>
       </header>
-
-      {/* desktop header
-      <header>
-
-      </header> */}
       <div className="feedback__filter">
         <span className="feedback__filter-text">
           Sort by :
