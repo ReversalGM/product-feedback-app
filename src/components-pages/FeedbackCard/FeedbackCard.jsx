@@ -51,7 +51,7 @@ export function FeedbackCard({
           btnIcon="/src/assets/shared/icon-comments.svg"
           btnIconAlt="comment icon"
         >
-          {comments?.length}
+          {comments?.length ?? 0}
         </Button>
       </div>
     </>
