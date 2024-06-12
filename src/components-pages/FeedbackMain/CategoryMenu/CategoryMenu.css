@@ -8,10 +8,10 @@
 .btn--list-item {
   color: var(--primary-blue);
   font-weight: 600;
-  padding: 0.5em 1.25em;
+  padding: 0.3em 1em;
   border-radius: 1em;
   background-color: var(--secondary-pale-moon);
-  font-size: 0.85rem;
+  font-size: 0.8125rem;
 }
 
 .btn--list-item.selected {

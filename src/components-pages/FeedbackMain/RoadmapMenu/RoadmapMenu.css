@@ -10,21 +10,23 @@
 
 .roadmap-menu__title {
   grid-area: title;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .roadmap-menu__link {
   grid-area: link;
   color: var(--primary-blue);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8125rem;
+  transform: translateY(2.5%);
+  justify-self: end;
 }
 
 .roadmap-item__bullet {
   justify-self: start;
   align-self: center;
   background-color: red;
-  width: 0.6rem;
+  width: 0.5rem;
   aspect-ratio: 1 / 1;
   border-radius: 99999rem;
 }
@@ -43,8 +45,10 @@
 
 .roadmap-item__title {
   font-weight: 400;
+  font-size: 1rem;
 }
 
 .roadmap-item__count {
   justify-self: end;
+  font-size: 1rem;
 }
