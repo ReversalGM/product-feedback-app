@@ -62,13 +62,17 @@ export function FeedbackMain(props) {
       </header>
 
       <div className="feedback__filter">
+        <span className="feedback__count">
+          <img src="/src/assets/suggestions/icon-suggestions.svg" />
+          {`${data?.productRequests?.length ?? 0} Suggestions`}
+        </span>
         <span className="feedback__filter-text">
           Sort by :
           <Dropdown
             btnProps={{
               className: "feedback__filter-btn",
               btnIconRight: "/src/assets/shared/icon-arrow-down.svg",
-              btnIconAltRight: "down-arrow icon",
+              btnIconAltRight: "",
             }}
             value={filter}
             setValue={handleFilterClick}
@@ -91,7 +95,7 @@ export function FeedbackMain(props) {
             <img
               className="feedback__empty__image"
               src="/src/assets/suggestions/illustration-empty.svg"
-              alt="no feedback image"
+              alt=""
             ></img>
             <div className="feedback__empty__text-container">
               <h2 className="feedback__empty__title">
