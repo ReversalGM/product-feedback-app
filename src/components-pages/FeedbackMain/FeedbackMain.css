@@ -24,10 +24,10 @@
     "subtitle button";
 
   background: linear-gradient(
-      25deg,
+      135deg,
       rgba(40, 167, 237, 1) 0%,
-      rgba(163, 55, 246, 1) 60%,
-      rgba(232, 77, 112, 1) 100%
+      rgba(163, 55, 246, 1) 50%,
+      rgba(232, 77, 112, 1) 95%
     ),
     rgba(40, 167, 237, 1);
   background-size: cover;
@@ -179,6 +179,42 @@
 @media (min-width: 768px) {
   .feedback__page-container {
     padding: 3.5rem 1.5rem;
+  }
+
+  .feedback__header {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background: linear-gradient(
+        135deg,
+        rgba(40, 167, 237, 1) 0%,
+        rgba(163, 55, 246, 1) 50%,
+        rgba(232, 77, 112, 1) 95%
+      ),
+      rgba(40, 167, 237, 1);
+    background-size: cover;
+    color: var(--primary-white);
+    background-color: var(--primary-white);
+    border-radius: 0.75em;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+
+  .feedback__header-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .feedback__header-subtitle {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    opacity: 75%;
+  }
+
+  .feedback__header-button.btn {
+    display: none; /* hide the button */
   }
 
   .feedback__menu-backdrop {
