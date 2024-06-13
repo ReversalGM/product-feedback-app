@@ -66,6 +66,13 @@
   grid-area: title;
   color: var(--secondary-dark-blue);
   margin: 0;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.feedback-card__title:hover {
+  color: var(--primary-blue);
 }
 
 .feedback-card__description {
@@ -109,8 +116,13 @@
   grid-area: comments;
   justify-self: end;
   background-color: var(--primary-white);
+  color: var(--secondary-dark-blue);
   padding: 0.5em 1em;
   font-weight: 700;
+}
+
+.btn--comments:hover {
+  color: var(--primary-blue);
 }
 
 /* tablet styles */

@@ -1,6 +1,7 @@
 import "./FeedbackCard.css"
 import { Button } from "/src/components/Button/Button.jsx"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 export function FeedbackCard({
   id,
   title,
@@ -35,7 +36,9 @@ export function FeedbackCard({
             <h4>{statusMap[status]}</h4>
           </div>
         )}
-        <h4 className="feedback-card__title">{title}</h4>
+        <Link to={`${id}`} className="feedback-card__title">
+          {title}
+        </Link>
         <p className="feedback-card__description">{description}</p>
         <div className="feedback-card__category">{capitalize(category)}</div>
         <Button
@@ -47,6 +50,7 @@ export function FeedbackCard({
           {upvotes + upvoted}
         </Button>
         <Button
+          {...{ element: Link, elementProps: { to: `${id}` } }}
           className="btn--comments"
           btnIcon="/src/assets/shared/icon-comments.svg"
           btnIconAlt="comment icon"
