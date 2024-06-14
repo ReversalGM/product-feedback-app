@@ -36,7 +36,7 @@ export function FeedbackCard({
             <h4>{statusMap[status]}</h4>
           </div>
         )}
-        <Link to={`${id}`} className="feedback-card__title">
+        <Link to={`/${id}`} className="feedback-card__title">
           {title}
         </Link>
         <p className="feedback-card__description">{description}</p>
@@ -50,7 +50,7 @@ export function FeedbackCard({
           {upvotes + upvoted}
         </Button>
         <Button
-          {...{ element: Link, elementProps: { to: `${id}` } }}
+          {...{ element: Link, elementProps: { to: `/${id}` } }}
           className="btn--comments"
           btnIcon="/src/assets/shared/icon-comments.svg"
           btnIconAlt="comment icon"

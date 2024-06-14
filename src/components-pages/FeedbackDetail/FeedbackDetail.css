@@ -1,7 +1,13 @@
-.FeedbackDetail__header,
-.FeedbackDetail__body {
+.FeedbackDetail__header-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem;
-  background-color: var(--secondary-pale-moon);
+  gap: 1.5rem;
+  height: 100%;
+  width: 100%;
+  background-color: var(--secondary-white);
+  overflow: auto;
 }
 
 .FeedbackDetail__header {
@@ -18,27 +24,35 @@
 
 .header__edit-feedback-btn,
 .header__go-back-btn {
-  border-radius: 0.6em;
+  border-radius: 0.625em;
   text-decoration: none;
   font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 0.66rem 1rem;
 }
 
 .header__go-back-btn {
   color: var(--secondary-grayish-blue);
   background-color: transparent;
   gap: 0.75em;
-  margin-left: -0.5em;
+  margin-left: -0.66rem;
+}
+.header__go-back-btn:hover {
+  text-decoration: underline;
 }
 
 .header__edit-feedback-btn {
   color: var(--secondary-pale-moon);
   background-color: var(--primary-blue);
 }
+.header__edit-feedback-btn:hover {
+  background-color: var(--secondary-blue);
+}
 
 .FeedbackDetail__Comments {
   padding: 1.5rem;
   background-color: var(--primary-white);
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
 
   display: flex;
   flex-direction: column;
@@ -52,5 +66,5 @@
 .FeedbackDetail__New-Comments {
   padding: 1.5rem;
   background-color: var(--primary-white);
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
 }

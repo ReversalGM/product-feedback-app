@@ -12,7 +12,7 @@ export function FeedbackDetail() {
     return element.id == feedbackId
   })
   return (
-    <>
+    <div className="FeedbackDetail__header-container">
       <header className="FeedbackDetail__header">
         <Button
           element={Link}
@@ -35,16 +35,16 @@ export function FeedbackDetail() {
         <section className="FeedbackDetail__Post">
           <FeedbackCard {...postData} />
         </section>
-        <section className="FeedbackDetail__Comments">
-          <h2 className="Comments__title">4 Comments</h2>
-          {postData.comments.map((element) => {
-            return <CommentCard key={crypto.randomUUID()} {...element} />
-          })}
-        </section>
         <section className="FeedbackDetail__New-Comments">
           <FormNewComment />
         </section>
+        <section className="FeedbackDetail__Comments">
+          <h2 className="Comments__title">4 Comments</h2>
+          {postData.comments.map((element) => {
+            return <CommentCard key={element.id} {...element} />
+          })}
+        </section>
       </main>
-    </>
+    </div>
   )
 }

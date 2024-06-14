@@ -1,5 +1,7 @@
 import "./CommentCard.css"
 import { Button } from "../../components/Button/Button"
+import { useState } from "react"
+import { FormNewComment } from "../FeedbackDetail/FormNewComment/FormNewComment"
 export function CommentCard({
   id,
   content,
@@ -8,6 +10,7 @@ export function CommentCard({
   replies,
   className,
 }) {
+  const [replying, setReplying] = useState(false)
   return (
     <div className={"comment-card" + (" " + className || "")}>
       <img
@@ -17,7 +20,12 @@ export function CommentCard({
       />
       <h3 className="comment-card__real-name">{name}</h3>
       <h4 className="comment-card__username">{"@" + username}</h4>
-      <Button className="comment-card__reply-btn">Reply</Button>
+      <Button
+        elementProps={{ onClick: () => setReplying(true) }}
+        className="comment-card__reply-btn"
+      >
+        Reply
+      </Button>
       <p className="comment-card__content">
         {replyingTo && (
           <span className="comment-card__replying-to">
@@ -26,12 +34,17 @@ export function CommentCard({
         )}
         {content}
       </p>
+      {replying && (
+        <div className="comment-card__reply">
+          <FormNewComment isReply={true} />
+        </div>
+      )}
       {replies && (
         <div className="comment-card__replies__container">
-          {replies.map((element) => {
+          {replies.map((element, index) => {
             return (
               <CommentCard
-                key={crypto.randomUUID()}
+                key={index}
                 className="comment-card--reply"
                 {...element}
               />

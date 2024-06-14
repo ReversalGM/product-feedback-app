@@ -1,8 +1,7 @@
 import "./FormNewComment.css"
 import { useForm, useWatch } from "react-hook-form"
 import { Button } from "../../../components/Button/Button"
-import { useState } from "react"
-export function FormNewComment() {
+export function FormNewComment({ isReply = false }) {
   const {
     register,
     handleSubmit,
@@ -23,18 +22,26 @@ export function FormNewComment() {
 
   return (
     <>
-      <form className="comment-form" onSubmit={handleSubmit(onSubmit)}>
-        <h2 className="comment-form__title">Add Comment</h2>
+      <form
+        className={isReply ? "comment-form--reply" : "comment-form"}
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        {!isReply && <h2 className="comment-form__title">Add Comment</h2>}
         <textarea
           placeholder="Type your comment here"
           className="comment-form__text-area"
           maxLength="250"
+          rows="4"
           {...register("comment-content")}
         ></textarea>
-        <p className="comment-form__char-remain">{`${
-          250 - Number(textareaContent.length)
-        } Characters left`}</p>
-        <Button className="comment-form__submit-btn">Post Comment</Button>
+        {!isReply && (
+          <p className="comment-form__char-remain">{`${
+            250 - Number(textareaContent.length)
+          } Characters left`}</p>
+        )}
+        <Button className="comment-form__submit-btn">{`Post ${
+          isReply ? "Reply" : "Comment"
+        }`}</Button>
       </form>
     </>
   )

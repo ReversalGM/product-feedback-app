@@ -27,11 +27,13 @@ html {
   --primary-white: #ffffff;
 
   /* Secondary Colors */
+  --secondary-purple: #c75af6;
   --secondary-grayish-white: #cfd3e2;
   --secondary-pale-moon: #f2f4ff;
   --secondary-dark-moon: #cfd7ff;
   --secondary-white: #f7f8fd;
   --secondary-dark-blue: #3a4374;
+  --secondary-blue: #7c91f9;
   --secondary-grayish-blue: #647196;
   --secondary-gray: #8c92b3;
 
