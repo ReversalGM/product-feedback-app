@@ -62,3 +62,11 @@
     grid-column: 1 / -1;
   }
 }
+
+@media (min-width: 768px) {
+  .comment-form__text-area,
+  .comment-form__char-remain,
+  .comment-form__submit-btn {
+    font-size: 0.9375rem;
+  }
+}

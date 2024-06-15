@@ -26,6 +26,7 @@ export function CommentCard({
       >
         Reply
       </Button>
+      {replies && <div className="comment-card__extended-border"></div>}
       <p className="comment-card__content">
         {replyingTo && (
           <span className="comment-card__replying-to">

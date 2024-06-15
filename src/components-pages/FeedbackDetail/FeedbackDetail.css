@@ -2,6 +2,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+
   padding: 1.5rem;
   gap: 1.5rem;
   height: 100%;
@@ -13,6 +15,8 @@
 .FeedbackDetail__header {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  max-width: 45.5rem;
 }
 
 .FeedbackDetail__body {
@@ -20,6 +24,8 @@
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
+  width: 100%;
+  max-width: 45.5rem;
 }
 
 .header__edit-feedback-btn,
@@ -67,4 +73,27 @@
   padding: 1.5rem;
   background-color: var(--primary-white);
   border-radius: 0.625rem;
+}
+
+@media (min-width: 768px) {
+  .FeedbackDetail__header-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary-white);
+    overflow: auto;
+  }
+
+  .FeedbackDetail__header-container {
+    padding: 2.5rem;
+  }
+
+  .FeedbackDetail__New-Comments,
+  .FeedbackDetail__Comments {
+    padding: 1.5rem 2rem;
+  }
 }
