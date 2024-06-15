@@ -18,6 +18,17 @@
   border-radius: 0.625em;
 }
 
+.feedback-card.feedback-card--orange,
+.feedback-card.feedback-card--purple,
+.feedback-card.feedback-card--blue {
+  grid-template-areas:
+    "status status"
+    "title title"
+    "description description"
+    "category category"
+    "upvote comments";
+}
+
 .feedback-card.feedback-card--orange {
   border-top: 0.4em solid var(--background-orange);
 }
@@ -34,6 +45,7 @@
   grid-area: status;
   display: flex;
   color: var(--secondary-grayish-blue);
+  transform: translateY(-0.5em);
 }
 
 .feedback-card__status > h4 {

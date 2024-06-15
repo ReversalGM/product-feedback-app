@@ -5,6 +5,7 @@ import data from "/src/assets/data.json"
 import { useMemo, useState } from "react"
 import { Link } from "react-router-dom"
 import { RoadmapTabs } from "./RoadmapTabs/RoadmapTabs"
+import { useViewport } from "../../hooks/useViewport"
 
 export function Roadmap() {
   const plannedList = useMemo(() => {
@@ -23,6 +24,9 @@ export function Roadmap() {
       return elem.status === "live"
     })
   }, [data])
+
+  const { width, height } = useViewport()
+  const TABLET_WIDTH = 768
 
   const tabData = [
     {
@@ -51,7 +55,7 @@ export function Roadmap() {
   const [selectedTab, setSelectedTab] = useState(tabData[0])
 
   return (
-    <>
+    <div className="Roadmap-container">
       <header className="Roadmap__header">
         <Button
           element={Link}
@@ -71,28 +75,58 @@ export function Roadmap() {
         </Button>
         <h1 className="Roadmap__title">Roadmap</h1>
       </header>
-      <main className="Roadmap__main">
-        <RoadmapTabs {...{ tabData, selectedTab, setSelectedTab }} />
-        <div className="Roadmap__container">
-          <div className="Roadmap__column__title__container">
-            <h2 className="Roadmap__column__title">{`${selectedTab.name}  (${selectedTab.data.length})`}</h2>
-            <h3 className="Roadmap__column__subtitle">
-              {selectedTab.description}
-            </h3>
+      {width >= TABLET_WIDTH ? (
+        // tablet and desktop layout
+        <main className="Roadmap__main--tablet">
+          <RoadmapTabs {...{ tabData, selectedTab, setSelectedTab }} />
+          <div className="Roadmap__container">
+            <div className="Roadmap__column__title__container">
+              <h2 className="Roadmap__column__title">{`${selectedTab.name}  (${selectedTab.data.length})`}</h2>
+              <h3 className="Roadmap__column__subtitle">
+                {selectedTab.description}
+              </h3>
+            </div>
+            <div className="Roadmap__column">
+              {selectedTab.data.map((elem) => {
+                return (
+                  <FeedbackCard
+                    className={selectedTab.cardClass}
+                    key={elem.id}
+                    {...elem}
+                  />
+                )
+              })}
+            </div>
           </div>
-          <div className="Roadmap__column">
-            {selectedTab.data.map((elem) => {
-              return (
-                <FeedbackCard
-                  className={selectedTab.cardClass}
-                  key={elem.id}
-                  {...elem}
-                />
-              )
-            })}
+        </main>
+      ) : (
+        // mobile layout
+        <main className="Roadmap__main">
+          <div>
+            <RoadmapTabs {...{ tabData, selectedTab, setSelectedTab }} />
           </div>
-        </div>
-      </main>
-    </>
+
+          <div className="Roadmap__container">
+            <div className="Roadmap__column__title__container">
+              <h2 className="Roadmap__column__title">{`${selectedTab.name}  (${selectedTab.data.length})`}</h2>
+              <h3 className="Roadmap__column__subtitle">
+                {selectedTab.description}
+              </h3>
+            </div>
+            <div className="Roadmap__column">
+              {selectedTab.data.map((elem) => {
+                return (
+                  <FeedbackCard
+                    className={selectedTab.cardClass}
+                    key={elem.id}
+                    {...elem}
+                  />
+                )
+              })}
+            </div>
+          </div>
+        </main>
+      )}
+    </div>
   )
 }
