@@ -108,7 +108,7 @@
       "status": "suggestion",
       "description": "Images and screencasts can enhance comments on solutions.",
       "comments": [
-        { 
+        {
           "id": 6,
           "content": "Right now, there is no ability to add images while giving feedback which isn't ideal because I have to use another app to show what I mean",
           "user": {
@@ -297,6 +297,51 @@
           ]
         }
       ]
+    },
+    {
+      "id": 13,
+      "title": "Improve accessibility",
+      "category": "enhancement",
+      "upvotes": 85,
+      "status": "live",
+      "description": "Adding alt text to images and improving color contrast for better accessibility.",
+      "comments": []
+    },
+    {
+      "id": 14,
+      "title": "Add dark mode",
+      "category": "enhancement",
+      "upvotes": 120,
+      "status": "live",
+      "description": "A dark theme option for users who prefer a darker interface.",
+      "comments": []
+    },
+    {
+      "id": 15,
+      "title": "Optimize for mobile",
+      "category": "enhancement",
+      "upvotes": 65,
+      "status": "live",
+      "description": "Improving the mobile experience for users on smaller screens.",
+      "comments": []
+    },
+    {
+      "id": 16,
+      "title": "Add user profiles",
+      "category": "enhancement",
+      "upvotes": 90,
+      "status": "live",
+      "description": "Allow users to create profiles to share their work and interact with others.",
+      "comments": []
+    },
+    {
+      "id": 17,
+      "title": "Improve search functionality",
+      "category": "enhancement",
+      "upvotes": 75,
+      "status": "live",
+      "description": "Enhance search capabilities to allow users to find content more easily.",
+      "comments": []
     }
   ]
 }
