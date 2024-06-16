@@ -26,6 +26,7 @@
   row-gap: 1.5rem;
   width: 100%;
   max-width: 45.5rem;
+  container-type: inline-size;
 }
 
 .header__edit-feedback-btn,
