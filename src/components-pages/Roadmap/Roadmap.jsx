@@ -78,26 +78,29 @@ export function Roadmap() {
       {width >= TABLET_WIDTH ? (
         // tablet and desktop layout
         <main className="Roadmap__main--tablet">
-          <RoadmapTabs {...{ tabData, selectedTab, setSelectedTab }} />
-          <div className="Roadmap__container">
-            <div className="Roadmap__column__title__container">
-              <h2 className="Roadmap__column__title">{`${selectedTab.name}  (${selectedTab.data.length})`}</h2>
-              <h3 className="Roadmap__column__subtitle">
-                {selectedTab.description}
-              </h3>
-            </div>
-            <div className="Roadmap__column">
-              {selectedTab.data.map((elem) => {
-                return (
-                  <FeedbackCard
-                    className={selectedTab.cardClass}
-                    key={elem.id}
-                    {...elem}
-                  />
-                )
-              })}
-            </div>
-          </div>
+          {tabData.map((curTab) => {
+            return (
+              <>
+                <div className="Roadmap__column__title__container">
+                  <h2 className="Roadmap__column__title">{`${selectedTab.name}  (${selectedTab.data.length})`}</h2>
+                  <h3 className="Roadmap__column__subtitle">
+                    {selectedTab.description}
+                  </h3>
+                </div>
+                <div className="Roadmap__column">
+                  {curTab.data.map((elem) => {
+                    return (
+                      <FeedbackCard
+                        className={curTab.cardClass}
+                        key={elem.id}
+                        {...elem}
+                      />
+                    )
+                  })}
+                </div>
+              </>
+            )
+          })}
         </main>
       ) : (
         // mobile layout
