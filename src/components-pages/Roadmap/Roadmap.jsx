@@ -77,7 +77,7 @@ export function Roadmap() {
       </header>
       {width >= TABLET_WIDTH ? (
         // tablet and desktop layout
-        <main className="Roadmap__main--tablet">
+        <main className="Roadmap__main">
           {tabData.map((curTab) => {
             return (
               <>

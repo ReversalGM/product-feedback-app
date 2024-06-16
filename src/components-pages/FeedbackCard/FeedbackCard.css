@@ -149,11 +149,22 @@
     row-gap: 0;
   }
 
+  .feedback-card.feedback-card--orange,
+  .feedback-card.feedback-card--purple,
+  .feedback-card.feedback-card--blue {
+    grid-template-areas:
+      "upvote status status"
+      "upvote title title"
+      "upvote description comments"
+      "upvote category category";
+  }
+
   .feedback-card__title {
     font-size: 1.125rem;
   }
 
-  .feedback-card__description {
+  .feedback-card__description,
+  .btn--comments {
     font-size: 1rem;
   }
 
@@ -164,7 +175,14 @@
     width: 2.5rem;
     height: 3.125rem;
   }
+}
 
+@media (min-width: 1024px) {
+  .feedback-card__title {
+    font-size: 1.125rem;
+  }
+
+  .feedback-card__description,
   .btn--comments {
     font-size: 1rem;
   }

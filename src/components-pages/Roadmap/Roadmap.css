@@ -94,13 +94,36 @@
 }
 
 @media (min-width: 768px) {
-  .Roadmap__main--tablet {
+  .Roadmap-container {
+    padding: 3.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 2rem;
+    background-color: var(--secondary-white);
+  }
+
+  .Roadmap__header {
+    width: 100%;
+    max-width: 70rem;
+    border-radius: 0.625rem;
+  }
+
+  .Roadmap__main {
+    all: unset;
     flex-grow: 1;
     height: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto 1fr;
     gap: 1rem;
+
+    width: 100%;
+    max-width: 70rem;
   }
 
   .Roadmap__column__title__container {
