@@ -1,0 +1,89 @@
+.FeedbackForm__form {
+  background-color: var(--primary-white);
+  color: var(--secondary-dark-blue);
+  padding: 1.5rem;
+  flex-direction: column;
+  display: flex;
+  row-gap: 1.5rem;
+  border-radius: 0.625rem;
+}
+
+.FeedbackForm__form__icon {
+  align-self: flex-start;
+  transform: translatey(-3rem);
+  margin-bottom: -3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.FeedbackForm__input-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+  font-size: 0.8125rem;
+}
+
+.FeedbackForm__input-group--btn {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  font-size: 0.8125rem;
+}
+
+.FeedbackForm__form__heading {
+  font-size: 1.25rem;
+}
+
+.FeedbackForm__form__title {
+  font-weight: 700;
+}
+
+.FeedbackForm__form__input {
+  background-color: var(--secondary-white);
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3125rem;
+  border: none;
+  outline-color: var(--primary-blue);
+  font-size: inherit;
+}
+
+.FeedbackForm__form__textarea {
+  background-color: var(--secondary-white);
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3125rem;
+  border: none;
+  outline-color: var(--primary-blue);
+  resize: none;
+  font-size: inherit;
+}
+
+.FeedbackForm__dropdown__button {
+  background-color: var(--secondary-white);
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3125rem;
+  border: none;
+  outline-color: var(--primary-blue);
+  width: 100%;
+  justify-content: space-between;
+  color: var(--secondary-dark-blue);
+  font-size: inherit;
+}
+
+.FeedbackForm__dropown__button:focus {
+  outline: 2px solid var(--primary-blue);
+}
+
+.FeedbackForm__form__btn {
+  color: var(--secondary-pale-moon);
+  background-color: var(--primary-purple);
+  font-weight: 700;
+  font-size: inherit;
+  padding: 0.8rem;
+}
+
+.FeedbackForm__form__btn--blue {
+  background-color: var(--secondary-dark-blue);
+}
