@@ -73,7 +73,7 @@ export function FeedbackForm() {
       </div>
       <div className="FeedbackForm__input-group--btn">
         <Button className="FeedbackForm__form__btn">Add Feedback</Button>
-        <Button className="FeedbackForm__form__btn FeedbackForm__form__btn--blue">
+        <Button className="FeedbackForm__form__btn FeedbackForm__form__btn--blue FeedbackForm__form__btn-cancel">
           Cancel
         </Button>
       </div>

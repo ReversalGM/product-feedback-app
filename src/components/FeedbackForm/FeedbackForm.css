@@ -10,7 +10,7 @@
 
 .FeedbackForm__form__icon {
   align-self: flex-start;
-  transform: translatey(-3rem);
+  transform: translateY(-3rem);
   margin-bottom: -3rem;
   width: 2.5rem;
   height: 2.5rem;
@@ -81,9 +81,51 @@
   background-color: var(--primary-purple);
   font-weight: 700;
   font-size: inherit;
-  padding: 0.8rem;
+  padding: 0.66rem;
+}
+
+.FeedbackForm__form__btn:hover {
+  opacity: 0.75;
 }
 
 .FeedbackForm__form__btn--blue {
   background-color: var(--secondary-dark-blue);
+}
+
+@media (min-width: 500px) {
+  .FeedbackForm__form {
+    padding: 2.5rem;
+  }
+  .FeedbackForm__form__icon {
+    transform: translateY(-4rem);
+    margin-bottom: -4rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .FeedbackForm__form__heading {
+    font-size: 1.5rem;
+  }
+
+  .FeedbackForm__input-group {
+    font-size: 0.875rem;
+  }
+
+  .FeedbackForm__input-group--btn {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.8125rem;
+
+    font-size: 0.875rem;
+  }
+
+  .FeedbackForm__form__btn {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .FeedbackForm__form__btn-cancel {
+    margin-left: auto;
+  }
 }

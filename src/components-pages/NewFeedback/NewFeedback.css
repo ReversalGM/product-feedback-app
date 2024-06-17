@@ -29,3 +29,9 @@
   width: 100%;
   max-width: 34rem;
 }
+
+@media (min-width: 500px) {
+  .NewFeedback__header__btn {
+    font-size: 0.875rem;
+  }
+}
