@@ -1,87 +1,37 @@
-/* .NewFeedback__header {
-  background-color: var(--secondary-white);
-  padding: 1.5rem;
+.EditFeedback-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+  background-color: var(--secondary-white);
+  width: 100vw;
+  height: 100vh;
+  padding: 1.5rem;
+  overflow: auto;
+}
+.EditFeedback__header {
+  width: 100%;
+  max-width: 34rem;
 }
 
-.NewFeedback__header__btn {
+.EditFeedback__header__btn {
+  width: fit-content;
   border-radius: 0.6em;
   text-decoration: none;
   font-weight: 700;
+  font-size: 0.8125rem;
   color: var(--secondary-grayish-blue);
   background-color: transparent;
   gap: 0.75em;
-  margin-left: -0.5em;
 }
 
-.NewFeedback__main {
-  background-color: coral;
-  background-color: var(--secondary-white);
-  padding: 1.5rem;
-  min-height: 100vh;
-}
-.NewFeedback__form {
-  background-color: var(--primary-white);
-  color: var(--secondary-dark-blue);
-  padding: 1.5rem;
-  flex-direction: column;
-  display: flex;
-  row-gap: 2rem;
-}
-
-.NewFeedback__form__icon {
-  align-self: flex-start;
-  transform: translatey(-3rem);
-  margin-bottom: -3rem;
-}
-
-.NewFeedback__input-group {
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.25rem;
-}
-
-.NewFeedback__input-group--btn {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-}
-
-.NewFeedback__form__heading {
-  font-size: 1.25rem;
-}
-
-.NewFeedback__form__title {
-  font-weight: 700;
-}
-
-.NewFeedback__form__textarea {
-  resize: none;
-  background-color: var(--secondary-white);
-  border: none;
-  margin-top: 0.75em;
-}
-
-.NewFeedback__dropdown > .Dropdown__button {
+.EditFeedback__main {
   width: 100%;
-  padding: 1rem;
-  justify-content: space-between;
-  color: var(--secondary-dark-blue);
-  background-color: var(--secondary-white);
-  border-radius: 0.3em;
+  max-width: 34rem;
 }
 
-.NewFeedback__form__btn {
-  color: var(--secondary-pale-moon);
-  background-color: var(--primary-purple);
-  font-weight: 700;
-  padding: 0.8rem;
+@media (min-width: 500px) {
+  .EditFeedback__header__btn {
+    font-size: 0.875rem;
+  }
 }
-
-.NewFeedback__form__btn--blue {
-  background-color: var(--secondary-dark-blue);
-}
-
-.EditFeedback__form__btn--red {
-  background-color: var(--primary-red) !important;
-} */

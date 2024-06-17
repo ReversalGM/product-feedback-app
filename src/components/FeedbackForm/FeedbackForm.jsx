@@ -4,9 +4,11 @@ import { useForm } from "react-hook-form"
 import { Dropdown } from "/src/components/Dropdown/Dropdown.jsx"
 import { Button } from "../../components/Button/Button"
 
-export function FeedbackForm() {
+export function FeedbackForm({ isEdit = false }) {
   const [feedbackCategory, setFeedbackCategory] = useState("Feature")
+  const [feedbackStatus, setFeedbackStatus] = useState("Planned")
   const categoryList = ["UI", "UX", "Enhancement", "Bug", "Feature"]
+  const statusList = ["Suggestion", "Planned", "In-Progress", "Live"]
   const {
     register,
     handleSubmit,
@@ -24,7 +26,9 @@ export function FeedbackForm() {
         className="FeedbackForm__form__icon"
         src="/src/assets/shared/icon-new-feedback.svg"
       ></img>
-      <h1 className="FeedbackForm__form__heading">Create New Feedback</h1>
+      <h1 className="FeedbackForm__form__heading">
+        {isEdit ? `Edit Feedback ${""}` : "Create New Feedback"}
+      </h1>
 
       <div className="FeedbackForm__input-group">
         <label htmlFor="title" className="FeedbackForm__form__title">
@@ -58,6 +62,30 @@ export function FeedbackForm() {
         ></Dropdown>
       </div>
 
+      {isEdit && (
+        <div className="FeedbackForm__input-group">
+          <label htmlFor="category" className="FeedbackForm__form__title">
+            Update Status
+          </label>
+          <label htmlFor="category" className="FeedbackForm__form__subtitle">
+            Change feature state
+          </label>
+          <Dropdown
+            className="FeedbackForm__dropdown"
+            btnProps={{
+              className: "FeedbackForm__dropdown__button",
+              btnIconRight: "/src/assets/shared/icon-arrow-down.svg",
+              btnIconAltRight: "down-arrow icon",
+            }}
+            value={feedbackStatus}
+            setValue={(newElement) => {
+              setFeedbackStatus(newElement)
+            }}
+            valueList={statusList}
+          ></Dropdown>
+        </div>
+      )}
+
       <div className="FeedbackForm__input-group">
         <label className="FeedbackForm__form__title" htmlFor="detail">
           Feedback Detail
@@ -72,9 +100,24 @@ export function FeedbackForm() {
         ></textarea>
       </div>
       <div className="FeedbackForm__input-group--btn">
-        <Button className="FeedbackForm__form__btn">Add Feedback</Button>
-        <Button className="FeedbackForm__form__btn FeedbackForm__form__btn--blue FeedbackForm__form__btn-cancel">
+        <Button className="FeedbackForm__form__btn">
+          {isEdit ? "Save Changes" : "Add Feedback"}
+        </Button>
+        <Button
+          className="
+        FeedbackForm__form__btn 
+        FeedbackForm__form__btn--blue 
+        FeedbackForm__form__btn-cancel"
+        >
           Cancel
+        </Button>
+        <Button
+          className="
+        FeedbackForm__form__btn 
+        FeedbackForm__form__btn--red 
+        FeedbackForm__form__btn-delete"
+        >
+          Delete
         </Button>
       </div>
     </form>

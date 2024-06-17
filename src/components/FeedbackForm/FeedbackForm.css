@@ -92,6 +92,10 @@
   background-color: var(--secondary-dark-blue);
 }
 
+.FeedbackForm__form__btn--red {
+  background-color: var(--primary-red);
+}
+
 @media (min-width: 500px) {
   .FeedbackForm__form {
     padding: 2.5rem;
