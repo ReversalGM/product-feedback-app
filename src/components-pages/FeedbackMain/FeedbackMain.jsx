@@ -7,6 +7,7 @@ import { Button } from "/src/components/Button/Button.jsx"
 import { Dropdown } from "/src/components/Dropdown/Dropdown"
 import { RoadmapMenu } from "./RoadmapMenu/RoadmapMenu"
 import { useViewport } from "../../hooks/useViewport"
+import { Link } from "react-router-dom"
 
 export function FeedbackMain(props) {
   const filterList = [
@@ -79,7 +80,13 @@ export function FeedbackMain(props) {
             valueList={filterList}
           ></Dropdown>
         </span>
-        <Button className="btn--feedback">+ Add Feedback</Button>
+        <Button
+          element={Link}
+          elementProps={{ to: "/new" }}
+          className="btn--feedback"
+        >
+          + Add Feedback
+        </Button>
       </div>
       <div className="feedback__list">
         {data?.productRequests?.length > 0 ? (
@@ -106,7 +113,13 @@ export function FeedbackMain(props) {
                 hearing about new ideas to improve our app.
               </p>
             </div>
-            <Button className="btn--feedback">+ Add Feedback</Button>
+            <Button
+              element={Link}
+              elementProps={{ to: "/new" }}
+              className="btn--feedback"
+            >
+              + Add Feedback
+            </Button>
           </div>
         )}
       </div>

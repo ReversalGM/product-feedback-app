@@ -68,7 +68,7 @@ export function Roadmap() {
         </Button>
         <Button
           element={Link}
-          elementProps={{ to: "/" }}
+          elementProps={{ to: "/new" }}
           className="Roadmap__header__btn--add-feedback"
         >
           + Add Feedback
@@ -82,9 +82,9 @@ export function Roadmap() {
             return (
               <>
                 <div className="Roadmap__column__title__container">
-                  <h2 className="Roadmap__column__title">{`${selectedTab.name}  (${selectedTab.data.length})`}</h2>
+                  <h2 className="Roadmap__column__title">{`${curTab.name}  (${curTab.data.length})`}</h2>
                   <h3 className="Roadmap__column__subtitle">
-                    {selectedTab.description}
+                    {curTab.description}
                   </h3>
                 </div>
                 <div className="Roadmap__column">
