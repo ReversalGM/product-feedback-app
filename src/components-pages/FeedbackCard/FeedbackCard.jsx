@@ -25,8 +25,9 @@ export function FeedbackCard({
   }
 
   function capitalize(str) {
-    return str.slice(0, 1).toUpperCase() + str.slice(1)
+    return str ? str.slice(0, 1).toUpperCase() + str.slice(1) : ""
   }
+
   return (
     <>
       <div className={"feedback-card " + className}>
