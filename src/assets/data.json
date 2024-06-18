@@ -301,18 +301,18 @@
     {
       "id": 13,
       "title": "Improve accessibility",
-      "category": "enhancement",
+      "category": "ux",
       "upvotes": 85,
-      "status": "live",
+      "status": "suggestion",
       "description": "Adding alt text to images and improving color contrast for better accessibility.",
       "comments": []
     },
     {
       "id": 14,
       "title": "Add dark mode",
-      "category": "enhancement",
+      "category": "ui",
       "upvotes": 120,
-      "status": "live",
+      "status": "suggestion",
       "description": "A dark theme option for users who prefer a darker interface.",
       "comments": []
     },
