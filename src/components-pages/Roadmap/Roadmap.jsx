@@ -6,6 +6,7 @@ import { useMemo, useState } from "react"
 import { Link } from "react-router-dom"
 import { RoadmapTabs } from "./RoadmapTabs/RoadmapTabs"
 import { useViewport } from "../../hooks/useViewport"
+import arrowLeftIcon from "/assets/images/icon-arrow-left.svg"
 
 export function Roadmap() {
   const plannedList = useMemo(() => {
@@ -61,7 +62,7 @@ export function Roadmap() {
           element={Link}
           elementProps={{ to: "/" }}
           className="Roadmap__header__btn--go-back"
-          btnIcon="/assets/shared/icon-arrow-left.svg"
+          btnIcon={arrowLeftIcon}
           btnIconAlt="left-arrow icon"
         >
           Go Back

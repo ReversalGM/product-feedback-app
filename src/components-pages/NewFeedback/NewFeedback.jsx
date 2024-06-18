@@ -2,6 +2,7 @@ import "./NewFeedback.css"
 import { FeedbackForm } from "../../components/FeedbackForm/FeedbackForm"
 import { Button } from "../../components/Button/Button"
 import { Link } from "react-router-dom"
+import arrowLeftIcon from "/assets/images/icon-arrow-left.svg"
 
 export function NewFeedback() {
   return (
@@ -11,7 +12,7 @@ export function NewFeedback() {
           element={Link}
           elementProps={{ to: "/" }}
           className="NewFeedback__header__btn"
-          btnIcon="/assets/shared/icon-arrow-left.svg"
+          btnIcon={arrowLeftIcon}
           btnIconAlt="left-arrow icon"
         >
           Go Back

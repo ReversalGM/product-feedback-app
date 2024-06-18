@@ -5,6 +5,7 @@ import { CommentCard } from "../CommentCard/CommentCard"
 import { FormNewComment } from "./FormNewComment/FormNewComment"
 import { Link, useParams } from "react-router-dom"
 import data from "/assets/data.json"
+import leftArrowIcon from "/assets/images/icon-arrow-left.svg"
 
 export function FeedbackDetail() {
   let { feedbackId } = useParams()
@@ -18,7 +19,7 @@ export function FeedbackDetail() {
           element={Link}
           elementProps={{ to: "/" }}
           className="header__go-back-btn"
-          btnIcon="/assets/shared/icon-arrow-left.svg"
+          btnIcon={leftArrowIcon}
           btnIconAlt="left-arrow icon"
         >
           Go Back

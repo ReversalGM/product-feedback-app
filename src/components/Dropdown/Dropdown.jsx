@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./Dropdown.css"
 import { Button } from "/src/components/Button/Button.jsx"
 import { useClickOutside } from "/src/hooks/useClickOutside"
+import checkIcon from "/assets/images/icon-check.svg"
 
 export function Dropdown(props) {
   const [active, setActive] = useState(false)
@@ -51,7 +52,7 @@ export function DropdownItem(props) {
         {props.active && (
           <img
             className="Dropdown__item__icon"
-            src="/assets/shared/icon-check.svg"
+            src={checkIcon}
             alt="checkmark icon"
           />
         )}

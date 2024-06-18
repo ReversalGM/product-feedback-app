@@ -3,6 +3,8 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { Dropdown } from "/src/components/Dropdown/Dropdown.jsx"
 import { Button } from "../../components/Button/Button"
+import newFeedbackIcon from "/assets/images/icon-new-feedback.svg"
+import arrowDownIcon from "/assets/images/icon-arrow-down.svg"
 
 export function FeedbackForm({ isEdit = false }) {
   const [feedbackCategory, setFeedbackCategory] = useState("Feature")
@@ -22,10 +24,7 @@ export function FeedbackForm({ isEdit = false }) {
 
   return (
     <form onSubmit={handleSubmit(submitForm)} className="FeedbackForm__form">
-      <img
-        className="FeedbackForm__form__icon"
-        src="/assets/shared/icon-new-feedback.svg"
-      ></img>
+      <img className="FeedbackForm__form__icon" src={newFeedbackIcon}></img>
       <h1 className="FeedbackForm__form__heading">
         {isEdit ? `Edit Feedback ${""}` : "Create New Feedback"}
       </h1>
@@ -51,7 +50,7 @@ export function FeedbackForm({ isEdit = false }) {
           className="FeedbackForm__dropdown"
           btnProps={{
             className: "FeedbackForm__dropdown__button",
-            btnIconRight: "/assets/shared/icon-arrow-down.svg",
+            btnIconRight: arrowDownIcon,
             btnIconAltRight: "down-arrow icon",
           }}
           value={feedbackCategory}
@@ -74,7 +73,7 @@ export function FeedbackForm({ isEdit = false }) {
             className="FeedbackForm__dropdown"
             btnProps={{
               className: "FeedbackForm__dropdown__button",
-              btnIconRight: "/assets/shared/icon-arrow-down.svg",
+              btnIconRight: arrowDownIcon,
               btnIconAltRight: "down-arrow icon",
             }}
             value={feedbackStatus}

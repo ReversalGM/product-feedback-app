@@ -2,6 +2,7 @@ import "./EditFeedback.css"
 import { Button } from "../../components/Button/Button"
 import { Link } from "react-router-dom"
 import { FeedbackForm } from "../../components/FeedbackForm/FeedbackForm"
+import leftArrowIcon from "/assets/images/icon-arrow-left.svg"
 
 export function EditFeedback() {
   return (
@@ -11,7 +12,7 @@ export function EditFeedback() {
           element={Link}
           elementProps={{ to: "/" }}
           className="EditFeedback__header__btn"
-          btnIcon="/assets/shared/icon-arrow-left.svg"
+          btnIcon={leftArrowIcon}
           btnIconAlt="left-arrow icon"
         >
           Go Back

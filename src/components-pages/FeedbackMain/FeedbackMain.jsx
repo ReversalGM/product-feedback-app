@@ -8,6 +8,10 @@ import { Dropdown } from "/src/components/Dropdown/Dropdown"
 import { RoadmapMenu } from "./RoadmapMenu/RoadmapMenu"
 import { useViewport } from "../../hooks/useViewport"
 import { Link } from "react-router-dom"
+import hamburgerIcon from "/assets/images/icon-hamburger.svg"
+import suggestionsIcon from "/assets/images/icon-suggestions.svg"
+import arrowDownIcon from "/assets/images/icon-arrow-down.svg"
+import emptyImg from "/assets/images/illustration-empty.svg"
 
 export function FeedbackMain(props) {
   const filterList = [
@@ -37,7 +41,7 @@ export function FeedbackMain(props) {
             }}
             className="feedback__header-button btn"
           >
-            <img src="/assets/shared/mobile/icon-hamburger.svg"></img>
+            <img src={hamburgerIcon}></img>
           </button>
         </div>
         <div
@@ -64,7 +68,7 @@ export function FeedbackMain(props) {
 
       <div className="feedback__filter">
         <span className="feedback__count">
-          <img src="/assets/suggestions/icon-suggestions.svg" />
+          <img src={suggestionsIcon} />
           {`${data?.productRequests?.length ?? 0} Suggestions`}
         </span>
         <span className="feedback__filter-text">
@@ -73,7 +77,7 @@ export function FeedbackMain(props) {
             className="feedback__filter-dropdown"
             btnProps={{
               className: "feedback__filter-btn",
-              btnIconRight: "/assets/shared/icon-arrow-down.svg",
+              btnIconRight: { arrowDownIcon },
               btnIconAltRight: "",
             }}
             value={filter}
@@ -116,11 +120,7 @@ export function FeedbackMain(props) {
         ) : (
           // empty state
           <div className="feedback__empty">
-            <img
-              className="feedback__empty__image"
-              src="/assets/suggestions/illustration-empty.svg"
-              alt=""
-            ></img>
+            <img className="feedback__empty__image" src={emptyImg} alt=""></img>
             <div className="feedback__empty__text-container">
               <h2 className="feedback__empty__title">
                 There is no feeedback yet.

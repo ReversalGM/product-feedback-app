@@ -2,6 +2,9 @@ import "./FeedbackCard.css"
 import { Button } from "/src/components/Button/Button.jsx"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import arrowUpIcon from "/assets/images/icon-arrow-up.svg"
+import commentsIcon from "/assets/images/icon-comments.svg"
+
 export function FeedbackCard({
   id,
   title,
@@ -44,7 +47,7 @@ export function FeedbackCard({
         <div className="feedback-card__category">{capitalize(category)}</div>
         <Button
           className={`btn--upvote ${upvoted ? "btn--upvoted" : ""}`}
-          btnIcon="/assets/shared/icon-arrow-up.svg"
+          btnIcon={arrowUpIcon}
           btnIconAlt="upvote icon"
           clickHandler={handleUpvote}
         >
@@ -53,7 +56,7 @@ export function FeedbackCard({
         <Button
           {...{ element: Link, elementProps: { to: `/${id}` } }}
           className="btn--comments"
-          btnIcon="/assets/shared/icon-comments.svg"
+          btnIcon={commentsIcon}
           btnIconAlt="comment icon"
         >
           {comments?.length ?? 0}
