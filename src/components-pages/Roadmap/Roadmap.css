@@ -29,6 +29,10 @@
   padding: 0;
 }
 
+.Roadmap__header__btn--go-back:hover {
+  text-decoration: underline;
+}
+
 .Roadmap__header__btn--go-back > .btn__icon {
   /* filter sets left arrow color to #CDD2EE */
   filter: brightness(0) saturate(100%) invert(87%) sepia(6%) saturate(906%)
@@ -45,6 +49,10 @@
   background-color: var(--primary-purple);
   justify-self: end;
   align-self: center;
+}
+
+.Roadmap__header__btn--add-feedback:hover {
+  background-color: var(--secondary-purple);
 }
 
 .Roadmap__title {
