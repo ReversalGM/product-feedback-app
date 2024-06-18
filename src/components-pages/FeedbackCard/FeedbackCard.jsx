@@ -44,7 +44,7 @@ export function FeedbackCard({
         <div className="feedback-card__category">{capitalize(category)}</div>
         <Button
           className={`btn--upvote ${upvoted ? "btn--upvoted" : ""}`}
-          btnIcon="/src/assets/shared/icon-arrow-up.svg"
+          btnIcon="/assets/shared/icon-arrow-up.svg"
           btnIconAlt="upvote icon"
           clickHandler={handleUpvote}
         >
@@ -53,7 +53,7 @@ export function FeedbackCard({
         <Button
           {...{ element: Link, elementProps: { to: `/${id}` } }}
           className="btn--comments"
-          btnIcon="/src/assets/shared/icon-comments.svg"
+          btnIcon="/assets/shared/icon-comments.svg"
           btnIconAlt="comment icon"
         >
           {comments?.length ?? 0}

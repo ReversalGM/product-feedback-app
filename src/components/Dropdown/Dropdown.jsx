@@ -51,7 +51,7 @@ export function DropdownItem(props) {
         {props.active && (
           <img
             className="Dropdown__item__icon"
-            src="/src/assets/shared/icon-check.svg"
+            src="/assets/shared/icon-check.svg"
             alt="checkmark icon"
           />
         )}

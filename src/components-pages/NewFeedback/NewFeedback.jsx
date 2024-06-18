@@ -11,7 +11,7 @@ export function NewFeedback() {
           element={Link}
           elementProps={{ to: "/" }}
           className="NewFeedback__header__btn"
-          btnIcon="/src/assets/shared/icon-arrow-left.svg"
+          btnIcon="/assets/shared/icon-arrow-left.svg"
           btnIconAlt="left-arrow icon"
         >
           Go Back

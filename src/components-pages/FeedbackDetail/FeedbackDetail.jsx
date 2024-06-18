@@ -4,7 +4,7 @@ import { FeedbackCard } from "../FeedbackCard/FeedbackCard"
 import { CommentCard } from "../CommentCard/CommentCard"
 import { FormNewComment } from "./FormNewComment/FormNewComment"
 import { Link, useParams } from "react-router-dom"
-import data from "/src/assets/data.json"
+import data from "/assets/data.json"
 
 export function FeedbackDetail() {
   let { feedbackId } = useParams()
@@ -18,7 +18,7 @@ export function FeedbackDetail() {
           element={Link}
           elementProps={{ to: "/" }}
           className="header__go-back-btn"
-          btnIcon="/src/assets/shared/icon-arrow-left.svg"
+          btnIcon="/assets/shared/icon-arrow-left.svg"
           btnIconAlt="left-arrow icon"
         >
           Go Back

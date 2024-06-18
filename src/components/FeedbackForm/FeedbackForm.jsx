@@ -24,7 +24,7 @@ export function FeedbackForm({ isEdit = false }) {
     <form onSubmit={handleSubmit(submitForm)} className="FeedbackForm__form">
       <img
         className="FeedbackForm__form__icon"
-        src="/src/assets/shared/icon-new-feedback.svg"
+        src="/assets/shared/icon-new-feedback.svg"
       ></img>
       <h1 className="FeedbackForm__form__heading">
         {isEdit ? `Edit Feedback ${""}` : "Create New Feedback"}
@@ -51,7 +51,7 @@ export function FeedbackForm({ isEdit = false }) {
           className="FeedbackForm__dropdown"
           btnProps={{
             className: "FeedbackForm__dropdown__button",
-            btnIconRight: "/src/assets/shared/icon-arrow-down.svg",
+            btnIconRight: "/assets/shared/icon-arrow-down.svg",
             btnIconAltRight: "down-arrow icon",
           }}
           value={feedbackCategory}
@@ -74,7 +74,7 @@ export function FeedbackForm({ isEdit = false }) {
             className="FeedbackForm__dropdown"
             btnProps={{
               className: "FeedbackForm__dropdown__button",
-              btnIconRight: "/src/assets/shared/icon-arrow-down.svg",
+              btnIconRight: "/assets/shared/icon-arrow-down.svg",
               btnIconAltRight: "down-arrow icon",
             }}
             value={feedbackStatus}

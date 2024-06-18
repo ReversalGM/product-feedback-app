@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./FeedbackMain.css"
-import data from "/src/assets/data.json"
+import data from "/assets/data.json"
 import { CategoryMenu } from "./CategoryMenu/CategoryMenu"
 import { FeedbackCard } from "../FeedbackCard/FeedbackCard"
 import { Button } from "/src/components/Button/Button.jsx"
@@ -37,7 +37,7 @@ export function FeedbackMain(props) {
             }}
             className="feedback__header-button btn"
           >
-            <img src="/src/assets/shared/mobile/icon-hamburger.svg"></img>
+            <img src="/assets/shared/mobile/icon-hamburger.svg"></img>
           </button>
         </div>
         <div
@@ -64,7 +64,7 @@ export function FeedbackMain(props) {
 
       <div className="feedback__filter">
         <span className="feedback__count">
-          <img src="/src/assets/suggestions/icon-suggestions.svg" />
+          <img src="/assets/suggestions/icon-suggestions.svg" />
           {`${data?.productRequests?.length ?? 0} Suggestions`}
         </span>
         <span className="feedback__filter-text">
@@ -73,7 +73,7 @@ export function FeedbackMain(props) {
             className="feedback__filter-dropdown"
             btnProps={{
               className: "feedback__filter-btn",
-              btnIconRight: "/src/assets/shared/icon-arrow-down.svg",
+              btnIconRight: "/assets/shared/icon-arrow-down.svg",
               btnIconAltRight: "",
             }}
             value={filter}
@@ -118,7 +118,7 @@ export function FeedbackMain(props) {
           <div className="feedback__empty">
             <img
               className="feedback__empty__image"
-              src="/src/assets/suggestions/illustration-empty.svg"
+              src="/assets/suggestions/illustration-empty.svg"
               alt=""
             ></img>
             <div className="feedback__empty__text-container">

@@ -1,7 +1,7 @@
 import "./Roadmap.css"
 import { Button } from "../../components/Button/Button"
 import { FeedbackCard } from "../FeedbackCard/FeedbackCard"
-import data from "/src/assets/data.json"
+import data from "/assets/data.json"
 import { useMemo, useState } from "react"
 import { Link } from "react-router-dom"
 import { RoadmapTabs } from "./RoadmapTabs/RoadmapTabs"
@@ -61,7 +61,7 @@ export function Roadmap() {
           element={Link}
           elementProps={{ to: "/" }}
           className="Roadmap__header__btn--go-back"
-          btnIcon="/src/assets/shared/icon-arrow-left.svg"
+          btnIcon="/assets/shared/icon-arrow-left.svg"
           btnIconAlt="left-arrow icon"
         >
           Go Back
