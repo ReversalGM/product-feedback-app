@@ -39,7 +39,9 @@ export function FeedbackDetail() {
           <FormNewComment />
         </section>
         <section className="FeedbackDetail__Comments">
-          <h2 className="Comments__title">4 Comments</h2>
+          <h2 className="Comments__title">{`${
+            postData.comments?.length ?? 0
+          } Comments`}</h2>
           {postData.comments.map((element) => {
             return <CommentCard key={element.id} {...element} />
           })}
