@@ -22,6 +22,10 @@
   justify-self: end;
 }
 
+.roadmap-menu__link:hover {
+  opacity: 0.75;
+}
+
 .roadmap-item__bullet {
   justify-self: start;
   align-self: center;

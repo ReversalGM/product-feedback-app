@@ -135,6 +135,10 @@
   transform: translateY(25%);
 }
 
+.feedback__filter-btn:hover {
+  opacity: 0.75;
+}
+
 .btn--feedback {
   color: var(--secondary-pale-moon);
   font-weight: 700;
@@ -142,6 +146,10 @@
   background-color: var(--primary-purple);
   padding: 0.66em 1em;
   border-radius: 0.625em;
+}
+
+.btn--feedback:hover {
+  opacity: 0.75;
 }
 
 .feedback__list {

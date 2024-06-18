@@ -70,6 +70,7 @@ export function FeedbackMain(props) {
         <span className="feedback__filter-text">
           Sort by :
           <Dropdown
+            className="feedback__filter-dropdown"
             btnProps={{
               className: "feedback__filter-btn",
               btnIconRight: "/src/assets/shared/icon-arrow-down.svg",
