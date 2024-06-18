@@ -93,6 +93,22 @@ export function FeedbackMain(props) {
           // list of suggestions
           data.productRequests
             .filter((feedback) => feedback.status === "suggestion")
+            .filter(
+              (feedback) =>
+                category === "All" ||
+                feedback.category.toLowerCase() === category.toLowerCase()
+            )
+            .sort((a, b) => {
+              if (filter === "Most Upvotes") {
+                return b.upvotes - a.upvotes
+              } else if (filter === "Least Upvotes") {
+                return a.upvotes - b.upvotes
+              } else if (filter === "Most Comments") {
+                return (b.comments?.length ?? 0) - (a.comments?.length ?? 0)
+              } else {
+                return (a.comments?.length ?? 0) - (b.comments?.length ?? 0)
+              }
+            })
             .map((feedback) => {
               return <FeedbackCard {...feedback} />
             })
