@@ -110,14 +110,16 @@ export function FeedbackForm({ isEdit = false }) {
         >
           Cancel
         </Button>
-        <Button
-          className="
+        {isEdit && (
+          <Button
+            className="
         FeedbackForm__form__btn 
         FeedbackForm__form__btn--red 
         FeedbackForm__form__btn-delete"
-        >
-          Delete
-        </Button>
+          >
+            Delete
+          </Button>
+        )}
       </div>
     </form>
   )
